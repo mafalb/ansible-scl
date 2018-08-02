@@ -1,0 +1,6 @@
+---
+
+- name: scl is installed
+  package:
+    name: centos-release-scl
+    state: installed
