@@ -1,6 +1,16 @@
+# vim: ft=yaml ts=2:
 ---
 
-- name: scl is installed
+- name: set OS specific variables
+  include_vars:
+    file: "{{ ansible_distribution }}.yml"
+
+- debug: var=scl
+  tags:
+    - never
+    - debug
+
+- name: scl does exist
   package:
-    name: centos-release-scl
-    state: installed
+    name: "{{ scl.release }}"
+    state: present
