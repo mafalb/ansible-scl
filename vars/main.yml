@@ -1,0 +1,4 @@
+# vim: set ft=yaml ts=2:
+---
+
+scl_path_prefix: /opt/rh
